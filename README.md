@@ -38,11 +38,11 @@ You already created Node and BST classes with a Comparable Interface for Project
 ## 2. **Generic AVL Tree Interface**
 
 I have enclosed three starter codes:
-1. `AvlTree.java`
+1. `AVLTree.java`
 2. `TestAvl.java`
 3. `Proj2.java`
 
-The `AvlTree.java` file contains an overall structure of that AVL Tree class, and you are expected to complete the code where it is indicated (Search for `// FINISH ME`). The `TestAvl.java` file must not be modified, and it will be used for testing your AVL Tree class. It does not check for every error, but I hope that it will be helpful for you. The `Proj2.java` file contains a starter code for you to implement the main driver of the program.
+The `AVLTree.java` file contains an overall structure of that AVL Tree class, and you are expected to complete the code where it is indicated (Search for `// FINISH ME`). The `TestAvl.java` file must not be modified, and it will be used for testing your AVL Tree class. It does not check for every error, but I hope that it will be helpful for you. The `Proj2.java` file contains a starter code for you to implement the main driver of the program.
 
 ## 3. **Sorted and Randomized Datasets for BST and AVL Trees**
 
@@ -96,3 +96,22 @@ I ___strongly suggest___ that you carefully think through your strategy before j
 ∗ @date: October 21, 2025
 ∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗∗/
 ```
+
+# Graphs
+Note: I graphed N versus Time rather than the rate time increases per N because I figured that would be easier to understand when reading the graph (it's easier to understand when typing it out like this too)
+## Insert: ![Insert Graphs.png](Images/Insert%20Graphs.png)
+## Search: ![Search Graphs.png](Images/Search%20Graphs.png)
+
+# ChatGPT
+
+## Prompt 1:
+I'm having an issue with my AVL Tree insert code. Whenever "balance(t)" is called, t needs both left and right children to not be equal to null. I'm not fully sure why this happens and how to prevent it. Here's my insert function: /** * Internal method to insert into a subtree. * @param x the item to insert. * @param t the node that roots the subtree. * @return the new root of the subtree. */ //Inserts x at in-order position in subtree with root t, or does nothing if it already exists in the subtree private AVLNode<AnyType> insert(AnyType x, AVLNode<AnyType> t ) { if (t == null) { return new AVLNode<AnyType>(x); } else if (t.compareTo(x) > 0) { t.setLeft(insert(x, t.getLeft())); } else if (t.compareTo(x) < 0) { t.setRight(insert(x, t.getRight())); } return balance(t); }
+
+## Response 1:
+![prompt1A.png](Images/prompt1A.png)![prompt1B.png](Images/prompt1B.png)![prompt1C.png](Images/prompt1C.png)![prompt1D.png](Images/prompt1D.png)
+
+## Prompt 2:
+Are there any bugs with these methods that would potentially cause an infinite loop? /** * Internal method to find an item in a subtree. * @param x is item to search for. * @param t the node that roots the tree. * @return true if x is found in subtree. */ //Searches subtree with root t in pre-order for a match to x and returns true, or returns false if no match is found private boolean contains( AnyType x, AVLNode<AnyType> t ) { if (x == null || t == null) return false; else return containsHelp(x, t); } //Recursive helper method for contains() private boolean containsHelp(AnyType x, AVLNode<AnyType> t) { if (t.getData().equals(x)) { return true; } if (t.getLeft() != null) { if (containsHelp(x, t.getLeft())) return true; } if (t.getRight() != null) { if (containsHelp(x, t.getRight())) return true; } return false; }
+
+## Response 2:
+![prompt2A.png](Images/prompt2A.png)![prompt2B.png](Images/prompt2B.png)![prompt2C.png](Images/prompt2C.png)
