@@ -98,9 +98,13 @@ I ___strongly suggest___ that you carefully think through your strategy before j
 ```
 
 # Graphs
-Note: I graphed N versus Time rather than the rate time increases per N because I figured that would be easier to understand when reading the graph (it's easier to understand when typing it out like this too)
-## Insert: ![Insert Graphs.png](Images/Insert%20Graphs.png)
-## Search: ![Search Graphs.png](Images/Search%20Graphs.png)
+Note: I think something is messed up with the x-axis, it's plotting it evenly instead of by each number. I wasn't sure how to fix this, excel is very strange.
+Also, I did natural log of the nanosecond times instead of the rate since that gives a pretty good linear representation of how much better the AVL tree is when sorted.
+If you want me to do the rates instead, I can just change the ln formula to dividing by N instead. It'll probably take longer to retake the screenshots than to actually make that change.
+## Shuffled Insert: ![Shuffled Insert Graphs.png](Images/Shuffled%20Insert%20Graphs.png)
+## Shuffled Search: ![Shuffled Search Graphs.png](Images/Shuffled%20Search%20Graphs.png)
+## Sorted Insert: ![Sorted Insert Graphs.png](Images/Sorted%20Insert%20Graphs.png)
+## Sorted Search: ![Sorted Search Graphs.png](Images/Sorted%20Search%20Graphs.png)
 
 # ChatGPT
 

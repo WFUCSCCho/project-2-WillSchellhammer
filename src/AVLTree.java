@@ -1,3 +1,10 @@
+/************************************************************************
+ * @file: AVLTree.java
+ * @description: AVL Balanced Binary Search Tree, useable for any "Comparable" object.
+ * @author: Will S
+ * @date: October 21, 2025
+ ************************************************************************/
+
 // AVLTree class
 //
 // CONSTRUCTION: with no initializer
